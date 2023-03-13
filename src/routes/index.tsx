@@ -1,10 +1,19 @@
-import { Route, Routes as RoutesWrapper } from 'react-router-dom'
-import * as Pages from '../pages'
+import * as Pages from 'pages'
+import { createBrowserRouter, createRoutesFromElements, Route } from 'react-router-dom'
+import { LayoutApp } from 'Templates/Layout'
 
-export default function Routes() {
-  return (
-    <RoutesWrapper>
-      <Route path="/" element={<Pages.Home />} />
-    </RoutesWrapper>
+export const Router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<LayoutApp />}>
+      <Route
+        path="/"
+        element={<Pages.Home />}
+        handle={{
+          crumb: () => 'Home',
+        }}
+      />
+
+      <Route path="*" element={<div>Not Found</div>} />
+    </Route>
   )
-}
+)

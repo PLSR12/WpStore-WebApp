@@ -1,14 +1,14 @@
+import { ConfigProvider } from 'antd'
 import GlobalStyle from 'common/styles/globalStyles'
-import Theme from 'common/styles/Theme'
-import Routes from 'routes'
-import { ThemeProvider } from 'styled-components'
+import { RouterProvider } from 'react-router-dom'
+import { Router } from 'routes'
 
 function App() {
   return (
-    <ThemeProvider theme={Theme}>
-      <Routes />
+    <ConfigProvider>
+      <RouterProvider router={Router} />
       <GlobalStyle />
-    </ThemeProvider>
+    </ConfigProvider>
   )
 }
 
