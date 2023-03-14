@@ -1,5 +1,5 @@
-import { Breadcrumb } from 'antd'
-import { Params, useMatches } from 'react-router-dom'
+import { Breadcrumb } from "antd"
+import { Params, useMatches } from "react-router-dom"
 
 type matchTypes = {
   id: string
@@ -9,7 +9,7 @@ type matchTypes = {
   handle: any
 }
 
-export default function Breadcrumbs() {
+export const Breadcrumbs: React.FC = () => {
   const matches: Array<matchTypes> = useMatches()
 
   const crumbs = matches
@@ -27,7 +27,7 @@ export default function Breadcrumbs() {
     })
 
   return (
-    <Breadcrumb style={{ margin: '16px 0' }}>
+    <Breadcrumb style={{ margin: "16px 0" }}>
       {crumbs.map((crumb, index) => (
         <Breadcrumb.Item key={index}>{crumb}</Breadcrumb.Item>
       ))}

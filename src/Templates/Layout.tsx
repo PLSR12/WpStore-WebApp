@@ -1,8 +1,7 @@
-import { Layout, theme } from 'antd'
-import Breadcrumbs from 'components/Breadcrumb'
-import { Menu } from 'components/Menu'
-import React from 'react'
-import { Outlet } from 'react-router-dom'
+import { Layout, theme } from "antd"
+import * as Molecules from "components/molecules"
+import React from "react"
+import { Outlet } from "react-router-dom"
 
 const { Header, Content, Footer } = Layout
 
@@ -12,28 +11,35 @@ export const LayoutApp: React.FC = () => {
   } = theme.useToken()
 
   return (
-    <Layout>
-      <Header style={{ position: 'sticky', top: 0, zIndex: 1, width: '100%' }}>
+    <Layout style={{ minHeight: "100vh" }}>
+      <Header style={{ position: "sticky", top: 0, zIndex: 1, width: "100%" }}>
         <div
           style={{
-            float: 'left',
+            float: "left",
             width: 120,
             height: 31,
-            margin: '16px 24px 16px 0',
-            background: 'rgba(255, 0, 0, 0.2)',
+            margin: "16px 24px 16px 0",
+            background: "rgba(255, 0, 0, 0.2)",
+            color: "#fff",
           }}
-        />
-        <Menu />
+        >
+          LOGO
+        </div>
+        <Molecules.Menu />
       </Header>
-      <Content className="site-layout" style={{ padding: '0 50px' }}>
-        <Breadcrumbs />
+      <Content className="site-layout" style={{ padding: "0 50px" }}>
+        <Molecules.Breadcrumbs />
 
-        <div style={{ padding: 24, minHeight: 380, background: colorBgContainer }}>
-          {' '}
+        <div
+          style={{ padding: 24, minHeight: 380, background: colorBgContainer }}
+        >
+          {" "}
           <Outlet />
         </div>
       </Content>
-      <Footer style={{ textAlign: 'center' }}>Ant Design ©2023 Created by Ant UED</Footer>
+      <Footer style={{ textAlign: "center" }}>
+        Ant Design ©2023 Created by Ant UED
+      </Footer>
     </Layout>
   )
 }
