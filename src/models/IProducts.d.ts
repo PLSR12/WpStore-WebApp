@@ -1,7 +1,11 @@
 interface IProductsContext {
-  loadAllProducts: () => void
-  products: any[]
+  products: IProducts[]
   isLoading: boolean
+}
+
+interface IProductContext {
+  product?: IProducts
+  isLoading?: boolean
 }
 
 interface IProducts {
@@ -17,4 +21,4 @@ interface IProducts {
   }
 }
 
-export { IProductsContext, IProducts }
+export { IProductsContext, IProducts, IProductContext }

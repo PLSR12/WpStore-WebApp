@@ -3,9 +3,7 @@ import { IProducts, IProductsContext } from "models/IProducts"
 import { createContext, ReactNode, useEffect, useState } from "react"
 import { ProductsService } from "store/services"
 
-export const ProductsContext = createContext<IProductsContext>(
-  {} as IProductsContext
-)
+export const ProductsContext = createContext<IProductsContext>({} as IProductsContext)
 
 interface ProductsContextProps {
   children: ReactNode
@@ -33,7 +31,6 @@ export const ProductsProvider = () => {
     <>
       <ProductsContext.Provider
         value={{
-          loadAllProducts,
           products,
           isLoading,
         }}

@@ -1,10 +1,12 @@
 import { Card, Col, Row } from "antd"
 import Meta from "antd/es/card/Meta"
 import { useContext } from "react"
-import { ProductsContext } from "store/context"
+import { useNavigate } from "react-router-dom"
+import { ProductsContext } from "store/context/ProductsContext"
 
 export const Products: React.FC = () => {
   const { products } = useContext(ProductsContext)
+  const navigate = useNavigate()
   console.log(products)
   return (
     <Row gutter={16} justify={"center"}>
@@ -24,7 +26,7 @@ export const Products: React.FC = () => {
                   }}
                 />
               }
-              onClick={() => console.log("a")}
+              onClick={() => navigate(`/product/:${product.id}`)}
             >
               <Meta title={product.title} description={product.price} />
             </Card>

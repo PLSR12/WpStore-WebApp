@@ -11,6 +11,6 @@ async function getAll() {
   return HttpService.get(`${basePath}`)
 }
 
-async function getById(id?: number) {
+async function getById(id?: string) {
   return HttpService.get(`${basePath}/${id}`)
 }

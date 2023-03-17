@@ -1,10 +1,7 @@
 import * as Pages from "components/pages"
-import {
-  createBrowserRouter,
-  createRoutesFromElements,
-  Route,
-} from "react-router-dom"
-import { ProductsProvider } from "store/context"
+import { createBrowserRouter, createRoutesFromElements, Route } from "react-router-dom"
+import { ProductProvider } from "store/context/ProductContext"
+import { ProductsProvider } from "store/context/ProductsContext"
 import { LayoutApp } from "Templates/Layout"
 
 export const Router = createBrowserRouter(
@@ -26,8 +23,8 @@ export const Router = createBrowserRouter(
       />
 
       <Route
-        path="/productse"
-        element={<Pages.Product />}
+        path="/product/:id"
+        element={<ProductProvider />}
         handle={{
           crumb: () => "Produto",
         }}
