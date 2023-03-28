@@ -1,11 +1,5 @@
 import * as Pages from "components/pages"
-import {
-  createBrowserRouter,
-  createRoutesFromElements,
-  Outlet,
-  Route,
-  useParams,
-} from "react-router-dom"
+import { createBrowserRouter, createRoutesFromElements, Outlet, Route } from "react-router-dom"
 import { ProductProvider } from "store/context/ProductContext"
 import { ProductsProvider } from "store/context/ProductsContext"
 import { LayoutApp } from "Templates/Layout"
@@ -39,12 +33,7 @@ export const Router = createBrowserRouter(
           path=":id"
           element={<ProductProvider />}
           handle={{
-            crumb: () => {
-              const { id } = useParams<{ id: string }>()
-              const splitedId = id?.split(":")[1]
-
-              return splitedId
-            },
+            crumb: () => "",
           }}
         />
       </Route>
