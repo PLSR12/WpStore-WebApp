@@ -52,12 +52,5 @@ export const Menu: React.FC = () => {
     }
   }
 
-  return (
-    <MenuAntd
-      theme="dark"
-      mode="horizontal"
-      defaultSelectedKeys={[selected]}
-      items={items}
-    />
-  )
+  return <MenuAntd theme="dark" mode="horizontal" defaultSelectedKeys={[selected]} items={items} />
 }

@@ -27,19 +27,15 @@ export const LayoutApp: React.FC = () => {
         </div>
         <Molecules.Menu />
       </Header>
-      <Content className="site-layout" style={{ padding: "0 50px" }}>
+      <Content className="site-layout" style={{ padding: "50px" }}>
         <Molecules.Breadcrumbs />
 
-        <div
-          style={{ padding: 24, minHeight: 380, background: colorBgContainer }}
-        >
+        <div style={{ padding: 40, minHeight: 380, background: colorBgContainer }}>
           {" "}
           <Outlet />
         </div>
       </Content>
-      <Footer style={{ textAlign: "center" }}>
-        Ant Design ©2023 Created by Ant UED
-      </Footer>
+      <Footer style={{ textAlign: "center" }}>Ant Design ©2023 Created by Ant UED</Footer>
     </Layout>
   )
 }
